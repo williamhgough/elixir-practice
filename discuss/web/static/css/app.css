@@ -1,1 +1,11 @@
 /* This file is for your main application css. */
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    margin-top: 0px;
+}
+
+nav ul a {
+    font-size: 1.5rem;
+}
