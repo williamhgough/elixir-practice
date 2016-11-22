@@ -18,12 +18,12 @@
 </head>
 
 <body>
-    <nav style="background-color: #b0bdfc;">
+    <nav class="discuss-bg">
         <div class="nav-wrapper">
             <a href="/" style="padding-left: 10px; text-decoration: none;" class="brand-logo">Discuss</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/topics/new" style="background-color: #bdfcb0;" class="btn grey-text text-darken-4">New Topic</a></li>
-                <li><a style="background-color: #fcaebb;" class="btn grey-text text-darken-4">Login with Github</a></li>
+                <li><a href="/topics/new" class="btn grey-text text-darken-4 discuss-primary">New Topic</a></li>
+                <li><a class="discuss-secondary btn grey-text text-darken-4">Login with Github</a></li>
             </ul>
         </div>
     </nav>
@@ -36,16 +36,16 @@
                 error = get_flash(@conn, :error)
                 %>
                 <%= if info do %>
-                    <div class="card-panel green lighten-3" role="alert">
-                        <span class="white-text">
+                    <div class="card-panel discuss-success" role="alert">
+                        <span>
                             <strong>Success</strong><%= info %>
                         </span>
                     </div>
                 <% end %>
                 <%= if error do %>
-                    <div class="card-panel red accent-1" role="alert">
-                        <span class="white-text">
-                            <%= error %>
+                    <div class="card-panel discuss-error" role="alert">
+                        <span>
+                            <strong>Uh Oh!</strong><%= error %>
                         </span>
                     </div>
                 <% end %>

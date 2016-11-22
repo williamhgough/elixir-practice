@@ -30,5 +30,20 @@ export default StyleSheet.create({
     },
     "nav ul a": {
         "fontSize": 1.5
+    },
+    "discuss-bg": {
+        "backgroundColor": "#b0bdfc"
+    },
+    "discuss-primary": {
+        "backgroundColor": "#bdfcb0"
+    },
+    "discuss-success": {
+        "backgroundColor": "#bdfcb0"
+    },
+    "discuss-secondary": {
+        "backgroundColor": "#fcaebb"
+    },
+    "discuss-error": {
+        "backgroundColor": "#fcaebb"
     }
 });

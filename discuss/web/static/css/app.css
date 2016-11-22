@@ -9,3 +9,17 @@ body {
 nav ul a {
     font-size: 1.5rem;
 }
+
+.discuss-bg {
+    background-color: #b0bdfc;
+}
+
+.discuss-primary,
+.discuss-success {
+    background-color: #bdfcb0;
+}
+
+.discuss-secondary,
+.discuss-error {
+    background-color: #fcaebb;
+}

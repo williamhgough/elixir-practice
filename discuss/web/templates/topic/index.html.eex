@@ -1,0 +1,30 @@
+<div class="jumbotron">
+  <h2><%= gettext "Welcome to %{name}", name: "Discuss!" %></h2>
+  <p class="lead">A place where you can spark conversation
+  <br/> about anything web development.</p>
+</div>
+
+<div class="">
+  <div class="col-m12">
+    <h4>Topics</h4>
+    <ul class="collection">
+        <%= for topic <- @topics do %>
+        <li class="collection-item">
+            <strong><%= topic.id %>.</strong>
+            <%= topic.title %>
+            <div class="pull-right">
+                <%= link to: topic_path(@conn, :edit, topic.id) do %>
+                <span> Edit </span>
+                <% end %>
+            </div>
+        </li>
+        <% end %>
+    </ul>
+  </div>
+
+
+<div class="fixed-action-btn">
+    <%= link to: topic_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light discuss-primary" do %>
+        <i class="fa fa-plus"></i>
+    <% end %>
+</div>
