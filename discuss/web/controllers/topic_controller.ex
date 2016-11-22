@@ -8,10 +8,6 @@ defmodule Discuss.TopicController do
         render conn, "index.html", topics: topics
     end
 
-    def view(conn, _params) do
-
-    end
-
     def new(conn, _params) do
         changeset = Topic.changeset( %Topic{}, %{})
 
@@ -38,10 +34,6 @@ defmodule Discuss.TopicController do
         render conn, "edit.html", changeset: changeset, topic: topic
     end
 
-    def delete(conn, _params) do
-
-    end
-
     def update(conn, %{"id" => topic_id, "topic" => topic}) do
         changeset = Repo.get(Topic, topic_id) |> Topic.changeset(topic)
 
@@ -50,10 +42,18 @@ defmodule Discuss.TopicController do
                 conn
                 |> put_flash(:info, " - Topic updated!")
                 |> redirect(to: topic_path(conn, :index))
-            {:error, changeset} ->
+            {:error, _changeset} ->
                 conn
                 |> put_flash(:error, " - Something went wrong! Try again, please?")
                 |> redirect(to: topic_path(conn, :edit, topic_id))
         end
+    end
+
+    def delete(conn, %{"id" => topic_id}) do
+        Repo.get!(Topic, topic_id) |> Repo.delete!
+
+        conn
+        |> put_flash(:info, " - Topic deleted.")
+        |> redirect(to: topic_path(conn, :index))
     end
 end
